@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  db:
+    image: postgres:15.2
+    container_name: core-spring-security-db
+    environment:
+      POSTGRES_DB: core_spring_security
+      POSTGRESL_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - ../data/postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always

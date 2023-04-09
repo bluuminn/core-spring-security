@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/core_spring_security
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: password
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: create-drop
+
+  thymeleaf:
+    cache: false
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+  main:
+    allow-bean-definition-overriding: true
+
+  security:
+    user:
+      name: user
+      password: 1111
